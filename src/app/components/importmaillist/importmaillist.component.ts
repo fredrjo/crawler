@@ -17,3 +17,5 @@ export class ImportmaillistComponent implements OnInit {
       this.importmails = res.importmails;
     });
   }
+}
+
