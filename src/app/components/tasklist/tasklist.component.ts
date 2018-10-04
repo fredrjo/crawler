@@ -29,4 +29,5 @@ export class TasklistComponent implements OnInit {
         console.log(res);
         this.router.navigate(['/tasksetup/' + res.id]);
       });
+    }
 }
