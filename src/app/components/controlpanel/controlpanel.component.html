@@ -1,0 +1,31 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <mat-grid-tile-header>Weekly schedule</mat-grid-tile-header>
+        <div layout="row" layout-align="start start">
+            <app-tasklist [tasks]="tasks"></app-tasklist>
+        </div>
+      </mat-grid-tile>
+  <mat-grid-tile [colspan]="1">
+      <mat-grid-tile-header>Last runs</mat-grid-tile-header>
+    <mat-form-field class="example-full-width">
+        
+      <input matInput placeholder="Task name" value="{{title}}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Crawler day" value="{{day}}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Crawler hour" value="{{hour}}">
+    </mat-form-field>
+    
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1">
+      <mat-grid-tile-header>Last alarms</mat-grid-tile-header>
+    <app-alarmlist></app-alarmlist>
+  </mat-grid-tile>
+ 
+
+</mat-grid-list>

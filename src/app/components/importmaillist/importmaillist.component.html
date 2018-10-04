@@ -1,0 +1,7 @@
+<mat-form-field class="example-full-width">
+  <mat-select placeholder="Importmail list" [(ngModel)]="selected">
+    <mat-option *ngFor="let importmail of importmails" [value]="importmail.name">
+      {{importmail.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

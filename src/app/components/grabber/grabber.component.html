@@ -1,0 +1,9 @@
+<div class="example-form">
+<mat-form-field class="example-full-width">
+  <mat-select placeholder="Grabbers" [(ngModel)]="selected">
+    <mat-option *ngFor="let grabber of grabbers" [value]="grabber.name">
+      {{grabber.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>

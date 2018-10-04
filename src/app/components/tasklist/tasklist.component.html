@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef>Taskname</th>
+          <td mat-cell  *matCellDef="let element"> 
+            <a routerLink="/tasksetup/{{element.id}}">{{element.name}} </a>
+          </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Weekday">
+          <th mat-header-cell *matHeaderCellDef> Weekday </th>
+          <td mat-cell  *matCellDef="let element"> {{element.weekday}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Hour">
+          <th mat-header-cell *matHeaderCellDef> Hour </th>
+          <td mat-cell *matCellDef="let element"> {{element.hour}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Disabled">
+          <th mat-header-cell *matHeaderCellDef> Disabled </th>
+          <td mat-cell *matCellDef="let element"> {{element.disabled}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+    <button matIconButton (click)="addTask()"><mat-icon>add_circle</mat-icon> Add new task</button>

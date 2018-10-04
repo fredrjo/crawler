@@ -1,0 +1,9 @@
+<div class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Urls" [(ngModel)]="selected">
+        <mat-option *ngFor="let url of urls" [value]="url.visit_url">
+          {{url.visit_url}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
