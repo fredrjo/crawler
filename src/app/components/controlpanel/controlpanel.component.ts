@@ -11,7 +11,6 @@ export class ControlpanelComponent implements OnInit {
   constructor(private conn: ConnectService) { }
 
   ngOnInit() {
-    );
   }
 
 }
