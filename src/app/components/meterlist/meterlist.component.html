@@ -1,4 +1,4 @@
-<mat-card >
+<mat-card fxHide.xs="true">
     <mat-card-title>Meters</mat-card-title>
     <mat-card-content>
 <div class="mat-elevation-z8">
@@ -16,7 +16,7 @@
     </ng-container>
   
     <!-- Name Column -->
-    <ng-container matColumnDef="Vendor Id">
+    <ng-container matColumnDef="Vendor Id" >
       <th mat-header-cell *matHeaderCellDef> Vendor Id </th>
       <td mat-cell  *matCellDef="let element"> {{element.meter_id}} </td>
     </ng-container>
@@ -43,3 +43,10 @@
 <button matIconButton><mat-icon>add_circle</mat-icon> Add new meter</button>
 </mat-card-actions>
 </mat-card>
+
+<mat-card fxHide fxShow.xs="true">
+    <mat-card-title>Meters</mat-card-title>
+    <mat-card-content>
+      <mat-list-item *ngFor="let element of meters"> {{element.meter_id}}{{element.disabled}} </mat-list-item>
+      </mat-card-content>
+      </mat-card>

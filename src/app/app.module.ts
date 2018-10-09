@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatGridListModule, MatFormFieldModule, MatDatepickerModule,
   MatNativeDateModule,
   MatInputModule, MatSelectModule, MatIconModule, MatTableModule, MatPaginatorModule, MatCardModule,
-  MatListModule, MatSlideToggleModule} from '@angular/material';
+  MatListModule, MatSlideToggleModule, MatListItem} from '@angular/material';
 import { MeterlistComponent } from './components/meterlist/meterlist.component';
 import { GrabberComponent } from './components/grabber/grabber.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
