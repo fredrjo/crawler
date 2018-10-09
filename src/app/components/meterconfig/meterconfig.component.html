@@ -1,5 +1,5 @@
-<div fxLayout="row" fxLayout.md="column" fxLayoutGap="10px">
-    <div fxFlex="66">
+<div fxLayout.gt-md="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
+    <div fxFlex="45" fxLayout="column">
     <mat-card>
       <mat-card-title>
           <mat-card-subtitle>Definitions</mat-card-subtitle>
@@ -18,11 +18,28 @@
         </mat-form-field>
         <mat-slide-toggle>Disabled</mat-slide-toggle>
     </mat-card>
+    <mat-card>
+        <mat-card-content>
+          <mat-card-title>Last runs</mat-card-title>
+          <app-grabber [selected]="grabber"></app-grabber>
+          </mat-card-content>
+          </mat-card>
+          <mat-card>
+  
+        <mat-card-title>Last data</mat-card-title>
+        <mat-card-content>
+            <mat-card-actions>
+      <button mat-button>Watch the last grabs</button>
+      </mat-card-actions>
+    </mat-card-content>
+      </mat-card>
+         
     </div>
     <div fxLayout="column" fxFlex>
       <mat-card fxLayoutGap="10px">
   
-      <mat-card-title>Communication</mat-card-title>
+      <mat-card-title>Go to store</mat-card-title>
+      <mat-card-content>
       <mat-form-field>
           <input matInput [matDatepicker]="picker" placeholder="Choose a date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -30,29 +47,15 @@
          
          
         </mat-form-field>
+      </mat-card-content>
+        <mat-card-actions>
         <button matIconButton><mat-icon>local_grocery_store</mat-icon></button>
-        <a routerLink="/tasksetup">Go to task</a>
+        <a routerLink="/tasksetup/{{task_id}}">Go to task</a>
+      </mat-card-actions>
       
     </mat-card>
+    <app-meterlist [meters]="meters"></app-meterlist>
   
-    <mat-card >
-        <mat-card-title>Options</mat-card-title>
-        <div layout="row" layout-align="start start">
-            <app-meterlist [meters]="meters"></app-meterlist>
-        </div>
-    </mat-card>
-    <mat-card>
-      <mat-card-content>
-        <mat-card-title>Last runs</mat-card-title>
-        <app-grabber [selected]="grabber"></app-grabber>
-        </mat-card-content>
-        </mat-card>
-        <mat-card>
-
-      <mat-card-title>Last data</mat-card-title>
-      <mat-card-content>
-    <button mat-button>Watch the last grabs</button>
-  </mat-card-content>
-    </mat-card>
+ 
    </div>
   </div>

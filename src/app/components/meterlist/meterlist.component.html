@@ -1,3 +1,6 @@
+<mat-card >
+    <mat-card-title>Meters</mat-card-title>
+    <mat-card-content>
 <div class="mat-elevation-z8">
 <table mat-table [dataSource]="dataSource">
 
@@ -35,4 +38,8 @@
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
+</mat-card-content>
+<mat-card-actions>
 <button matIconButton><mat-icon>add_circle</mat-icon> Add new meter</button>
+</mat-card-actions>
+</mat-card>
