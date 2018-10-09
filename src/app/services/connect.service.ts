@@ -8,7 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConnectService {
 
-  private baseUrl = 'http://127.0.0.1:5000';
+  private baseUrl = 'http://192.168.0.110:5000';
 
   constructor(private http: HttpClient) { }
 

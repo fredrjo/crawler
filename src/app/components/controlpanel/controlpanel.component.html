@@ -1,31 +1,25 @@
-<mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile [colspan]="2" [rowspan]="2">
-        <mat-grid-tile-header>Weekly schedule</mat-grid-tile-header>
+<div fxLayout="row" fxLayout.md="column" fxLayoutGap="10px">
+  <div fxFlex="66">
+<mat-card>
+    <mat-card-title>
+        <mat-card-subtitle>Weekly schedule</mat-card-subtitle>
         <div layout="row" layout-align="start start">
             <app-tasklist [tasks]="tasks"></app-tasklist>
         </div>
-      </mat-grid-tile>
-  <mat-grid-tile [colspan]="1">
-      <mat-grid-tile-header>Last runs</mat-grid-tile-header>
-    <mat-form-field class="example-full-width">
-        
-      <input matInput placeholder="Task name" value="{{title}}">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Crawler day" value="{{day}}">
-    </mat-form-field>
+      </mat-card-title>
+      </mat-card>
+      </div>
+      <div fxLayout="column" fxFlex>
+  <mat-card fxLayoutGap="10px">
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Crawler hour" value="{{hour}}">
-    </mat-form-field>
+    <mat-card-title>Last runs</mat-card-title>
+ <app-taskrun></app-taskrun>
     
-  </mat-grid-tile>
+  </mat-card>
 
-  <mat-grid-tile [colspan]="1">
-      <mat-grid-tile-header>Last alarms</mat-grid-tile-header>
+  <mat-card >
+      <mat-card-title>Last alarms</mat-card-title>
     <app-alarmlist></app-alarmlist>
-  </mat-grid-tile>
- 
-
-</mat-grid-list>
+  </mat-card>
+ </div>
+</div>

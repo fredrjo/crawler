@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TasksetupComponent } from './components/tasksetup/tasksetup.component';
@@ -7,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatGridListModule, MatFormFieldModule, MatDatepickerModule,
   MatNativeDateModule,
-  MatInputModule, MatSelectModule, MatIconModule, MatTableModule, MatPaginatorModule, 
+  MatInputModule, MatSelectModule, MatIconModule, MatTableModule, MatPaginatorModule, MatCardModule,
   MatListModule, MatSlideToggleModule} from '@angular/material';
 import { MeterlistComponent } from './components/meterlist/meterlist.component';
 import { GrabberComponent } from './components/grabber/grabber.component';
@@ -20,6 +21,8 @@ import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { SearchComponent } from './components/search/search.component';
 import { AlarmlistComponent } from './components/alarmlist/alarmlist.component';
 import { UrllistComponent } from './components/urllist/urllist.component';
+import { TaskrunComponent } from './components/taskrun/taskrun.component';
+
 
 @NgModule({
   declarations: [
@@ -34,17 +37,19 @@ import { UrllistComponent } from './components/urllist/urllist.component';
     TasklistComponent,
     SearchComponent,
     AlarmlistComponent,
-    UrllistComponent
+    UrllistComponent,
+    TaskrunComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     HttpClientModule,
     FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatTableModule, MatPaginatorModule,
     MatGridListModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule,
-    MatDatepickerModule, MatNativeDateModule, MatListModule, MatSlideToggleModule
+    MatDatepickerModule, MatNativeDateModule, MatListModule, MatSlideToggleModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

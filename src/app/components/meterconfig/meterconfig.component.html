@@ -1,49 +1,58 @@
-<mat-grid-list cols="3" rowHeight="3:2">
-  <mat-grid-tile [colspan]="1">
-      <mat-grid-tile-header>Meter definitions</mat-grid-tile-header>
-    <mat-form-field class="example-full-width">
+<div fxLayout="row" fxLayout.md="column" fxLayoutGap="10px">
+    <div fxFlex="66">
+    <mat-card>
+      <mat-card-title>
+          <mat-card-subtitle>Definitions</mat-card-subtitle>
+      </mat-card-title>
+      <mat-form-field class="example-full-width">
         
-      <input matInput placeholder="Energinet id" value="{{title}}">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Vendor id" value="{{day}}">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Extras" value="{{hour}}"></textarea>
-    </mat-form-field>
-    <mat-slide-toggle>Disabled</mat-slide-toggle>
+          <input matInput placeholder="Energinet id" value="{{title}}">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Vendor id" value="{{day}}">
+        </mat-form-field>
     
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="1">
-    <mat-grid-tile-header>Grab meter</mat-grid-tile-header>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-     
-     
-    </mat-form-field>
-    <button matIconButton><mat-icon>local_grocery_store</mat-icon></button>
-    <a routerLink="/tasksetup">Go to task</a>
-</mat-grid-tile>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Extras" value="{{hour}}"></textarea>
+        </mat-form-field>
+        <mat-slide-toggle>Disabled</mat-slide-toggle>
+    </mat-card>
+    </div>
+    <div fxLayout="column" fxFlex>
+      <mat-card fxLayoutGap="10px">
+  
+      <mat-card-title>Communication</mat-card-title>
+      <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+         
+         
+        </mat-form-field>
+        <button matIconButton><mat-icon>local_grocery_store</mat-icon></button>
+        <a routerLink="/tasksetup">Go to task</a>
+      
+    </mat-card>
+  
+    <mat-card >
+        <mat-card-title>Options</mat-card-title>
+        <div layout="row" layout-align="start start">
+            <app-meterlist [meters]="meters"></app-meterlist>
+        </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Last runs</mat-card-title>
+        <app-grabber [selected]="grabber"></app-grabber>
+        </mat-card-content>
+        </mat-card>
+        <mat-card>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="2">
-      <mat-grid-tile-header>Related meters</mat-grid-tile-header>
-      <div layout="row" layout-align="start start">
-          <app-meterlist [meters]="meters"></app-meterlist>
-      </div>
-    </mat-grid-tile>
-
-  <mat-grid-tile [colspan]="1">
-      <mat-grid-tile-header>Task options</mat-grid-tile-header>
-    <app-grabber [selected]="grabber"></app-grabber>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="1">
-      <mat-grid-tile-header>Last data</mat-grid-tile-header>
+      <mat-card-title>Last data</mat-card-title>
+      <mat-card-content>
     <button mat-button>Watch the last grabs</button>
-  </mat-grid-tile>
- 
-
-</mat-grid-list>
+  </mat-card-content>
+    </mat-card>
+   </div>
+  </div>
