@@ -20,7 +20,7 @@
       </form>
     </mat-card>
     <mat-card >
-        <mat-card-title>Options</mat-card-title>
+        <mat-card-title>Grab engine</mat-card-title>
         <mat-card-content>
       <app-grabber [selected]="grabber"></app-grabber>
       <app-urllist [selected]="url"></app-urllist>
@@ -29,7 +29,7 @@
     <mat-card fxLayoutGap="10px">
       
   
-        <mat-card-title>Communication</mat-card-title>
+        <mat-card-title>Notify list</mat-card-title>
         <app-contactlist [selected]="contacts"></app-contactlist>
         <app-importmaillist></app-importmaillist>
         
@@ -37,7 +37,7 @@
     </div>
     <div fxLayout="column" fxFlex>
         
-    
+        <app-meterlist [meters]="meters"></app-meterlist>
  
     <mat-card>
         <mat-card-title>Last actions</mat-card-title>
@@ -56,6 +56,6 @@
   </mat-card-actions>
  
     </mat-card>
-    <app-meterlist [meters]="meters"></app-meterlist>
+   
    </div>
   </div>
