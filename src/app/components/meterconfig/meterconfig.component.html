@@ -2,21 +2,20 @@
     <div fxFlex="45" fxLayout="column">
     <mat-card>
       <mat-card-title>
-          <mat-card-subtitle>Definitions</mat-card-subtitle>
+         Definitions
       </mat-card-title>
       <mat-form-field class="example-full-width">
-        
-          <input matInput placeholder="Energinet id" value="{{title}}">
+          <input matInput placeholder="Energinet id" value="{{import_id}}">
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Vendor id" value="{{day}}">
+          <input matInput placeholder="Vendor id" value="{{meter_id}}">
         </mat-form-field>
     
         <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Extras" value="{{hour}}"></textarea>
+          <textarea matInput placeholder="Extras" value="{{extras}}"></textarea>
         </mat-form-field>
-        <mat-slide-toggle>Disabled</mat-slide-toggle>
+        <mat-slide-toggle class="example-full-width"[ngModel]="disabled">Disabled</mat-slide-toggle>
     </mat-card>
     <mat-card>
         <mat-card-content>
@@ -36,25 +35,23 @@
          
     </div>
     <div fxLayout="column" fxFlex>
+        <app-meterlist [meters]="meters"></app-meterlist>
       <mat-card fxLayoutGap="10px">
-  
       <mat-card-title>Go to store</mat-card-title>
       <mat-card-content>
       <mat-form-field>
           <input matInput [matDatepicker]="picker" placeholder="Choose a date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-         
-         
         </mat-form-field>
       </mat-card-content>
         <mat-card-actions>
         <button matIconButton><mat-icon>local_grocery_store</mat-icon></button>
-        <a routerLink="/tasksetup/{{task_id}}">Go to task</a>
+        <button mat-button (click)="goToTask()">Go to task</button>
       </mat-card-actions>
       
     </mat-card>
-    <app-meterlist [meters]="meters"></app-meterlist>
+    
   
  
    </div>

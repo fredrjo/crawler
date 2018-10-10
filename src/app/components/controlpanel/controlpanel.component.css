@@ -1,3 +1,6 @@
 body {
     height : 90%;
 }
+td {
+    text-align: left;
+  }
