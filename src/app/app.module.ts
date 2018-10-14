@@ -22,6 +22,8 @@ import { SearchComponent } from './components/search/search.component';
 import { AlarmlistComponent } from './components/alarmlist/alarmlist.component';
 import { UrllistComponent } from './components/urllist/urllist.component';
 import { TaskrunComponent } from './components/taskrun/taskrun.component';
+import { LogindataComponent } from './components/logindata/logindata.component';
+import { GrabberconfigComponent } from './components/grabberconfig/grabberconfig.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { TaskrunComponent } from './components/taskrun/taskrun.component';
     SearchComponent,
     AlarmlistComponent,
     UrllistComponent,
-    TaskrunComponent
+    TaskrunComponent,
+    LogindataComponent,
+    GrabberconfigComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectService} from '../../services/connect.service';
 
 @Component({
   selector: 'app-taskrun',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskrunComponent implements OnInit {
 
-  constructor() { }
+    lastRuns = [];
+  constructor(private conn: ConnectService) { }
 
   ngOnInit() {
+    this.conn.getResource('/taskruns').subscribe(res => {
+      this.lastRuns = res.taskruns;
+    });
   }
 
 }
